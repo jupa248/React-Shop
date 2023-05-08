@@ -1,4 +1,4 @@
-# react-checkpoint-Juan-
+# React Shop
 
 This is a full responsive e-commerce webpage, it makes REST calls to 3 different end points. One call from the "fakestore" API and the rest from a firebase database.
 <br/>
@@ -13,13 +13,15 @@ React, Typescript, Redux toolkit and Sass.
 
 ## Installing / Getting started
 
-1. In your terminal clone the project and move into the folder:
+1. Create a project on https://firebase.google.com/ (or use an existing one). Add a new .env file on the root directory, copy the variables from .env.sample and paste them on the new .env file. Replace "Paste here your firebase project url" part with your project link.
+
+2. In your terminal clone the project and move into the folder:
 
 ```shell
-git@github.com:JuanP-Gimenez/react-checkpoint-Juan.git
+git@github.com:jupa248/React-Shop.git
 ```
 
-2. To start the project run the following commands in the terminal:
+3. To start the project run the following commands in the terminal:
 
 ```shell
 npm install
