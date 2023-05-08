@@ -1,0 +1,40 @@
+.popup-title {
+  color: #fff;
+  text-align: center;
+  padding: 0.5rem 0;
+}
+
+.bg-blue {
+  background: #007fff;
+}
+
+.bg-red {
+  background: #d52802;
+}
+
+.total {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 0.5rem 0;
+
+  & button {
+    padding: 0.8rem 0.5rem;
+    color: #fff;
+    border-radius: 10px;
+  }
+  & button:hover {
+    @include respond(tab-land) {
+      background-color: #e2e2e2;
+      color: #007fff;
+      font-weight: bold;
+      border: 2px solid #007fff;
+      cursor: pointer;
+    }
+  }
+}
+
+.empty-message {
+  text-align: center;
+  padding: 0.5rem 0;
+}

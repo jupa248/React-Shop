@@ -1,0 +1,54 @@
+@keyframes slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-3rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bump {
+  0% {
+    transform: scale(1);
+  }
+  10% {
+    transform: scale(0.9);
+  }
+  30% {
+    transform: scale(1.2);
+  }
+  50% {
+    transform: scale(1.8);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+    fill: #ff372b;
+  }
+
+  25% {
+    transform: rotate(90);
+    fill: #7d25d9;
+  }
+
+  50% {
+    transform: rotate(180);
+    fill: #35abf0;
+  }
+
+  75% {
+    transform: rotate(180);
+    fill: #25d949;
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

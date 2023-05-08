@@ -1,0 +1,52 @@
+.item {
+  list-style: none;
+  border: 1px solid;
+  margin-bottom: 1rem;
+
+  &__header {
+    @include flexCol;
+    justify-content: center;
+
+    &-title {
+      color: #fff;
+      background: #121409;
+      text-align: center;
+      padding: 0.5rem 0;
+      width: 100%;
+    }
+
+    &-img {
+      width: 30%;
+      margin: 1rem 0;
+    }
+  }
+
+  &__main {
+    &-amount {
+      display: flex;
+      justify-content: space-evenly;
+      padding: 0.5rem 0;
+    }
+
+    &-actions {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.2rem;
+    }
+
+    &-actions button {
+      width: 100%;
+      color: #fff;
+      background: #121409;
+      border: none;
+      padding: 0.5rem 0;
+    }
+
+    &-actions button:hover,
+    &-actions button:focus {
+      color: #121409;
+      background: #e2e2e2;
+      cursor: pointer;
+    }
+  }
+}

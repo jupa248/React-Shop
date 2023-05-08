@@ -1,0 +1,74 @@
+.plp-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr 1fr;
+  gap: 1rem;
+  margin: 0.5rem;
+
+  @include respond(tab-land) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.categories {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  align-items: center;
+  height: 3.8rem;
+  font-size: 2rem;
+  padding-top: 8rem;
+  background: rgb(194, 191, 191);
+  background: linear-gradient(
+    0deg,
+    rgba(194, 191, 191, 1) 0%,
+    rgba(255, 255, 255, 1) 100%
+  );
+
+  @include respond(tab-land) {
+    justify-items: center;
+  }
+
+  & p {
+    font-style: italic;
+    font-weight: bold;
+  }
+
+  & select {
+    text-align: center;
+    padding: 0.5rem 0;
+    width: 40%;
+    cursor: pointer;
+  }
+
+  & p,
+  &__filter {
+    @include flexRow;
+    padding: 0 1rem;
+    width: 100%;
+
+    & label svg {
+      width: 1.2rem;
+      height: 1.2rem;
+    }
+  }
+
+  & label {
+    margin-right: 0.3rem;
+  }
+}
+
+.loading {
+  @include flexCol;
+  justify-content: center;
+  margin-top: 8rem;
+
+  & p {
+    font-size: 2rem;
+  }
+}
+
+.went-wrong {
+  text-align: center;
+  font-size: 2rem;
+  margin-top: 8rem;
+}

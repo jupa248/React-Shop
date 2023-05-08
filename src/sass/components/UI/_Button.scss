@@ -1,0 +1,102 @@
+.button {
+  @include flexRow;
+  width: 100%;
+  background: #121409;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 0;
+
+  &__quantity {
+    color: #121409;
+  }
+}
+
+.button-has-item {
+  @include flexRow;
+  width: 60%;
+  background-color: #fff;
+  color: #007fff;
+  font-weight: bold;
+  border: none;
+  padding: 0.7rem 0;
+  border-radius: 25px;
+  gap: 0.8rem;
+
+  @include respond(tab-land) {
+    font-size: 1.3rem;
+    width: 80%;
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.1);
+    }
+  }
+}
+
+.button:hover,
+.button:active,
+.button:focus {
+  outline: 2px solid #fff;
+  cursor: pointer;
+}
+
+.icon {
+  width: 2rem;
+  height: 2rem;
+
+  @include respond(tab-land) {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}
+
+.icon-big {
+  width: 2.5rem;
+  height: 2.5rem;
+
+  @include respond(tab-land) {
+    width: 2.7rem;
+    height: 2.7rem;
+  }
+}
+
+.icon-red {
+  color: #d52802;
+  width: 2rem;
+  height: 2rem;
+
+  @include respond(tab-land) {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}
+
+.button-product > .icon-red {
+  width: 2.5rem;
+  height: 2.5rem;
+
+  @include respond(tab-land) {
+    width: 2.7rem;
+    height: 2.7rem;
+  }
+}
+
+.button-product:hover {
+  @include respond(tab-land) {
+    cursor: pointer;
+    outline: 1px solid #fff;
+  }
+}
+
+.button-hover:hover {
+  @include respond(tab-land) {
+    background: #e2e2e2;
+    color: #121409;
+    cursor: pointer;
+    border: 1px solid #121409;
+  }
+}
+
+.bump {
+  animation: bump 300ms ease-out;
+}

@@ -1,0 +1,52 @@
+.product {
+  @include flexCol;
+  justify-content: space-between;
+  box-shadow: 2px 6px 45px -4px rgba(0, 0, 0, 0.59);
+
+  &__title {
+    text-align: center;
+    width: 80%;
+    padding: 1.5rem 0.5rem;
+    font-size: 1.5rem;
+    margin-top: 0.3rem;
+    border-top: 3px solid;
+    border-image: linear-gradient(to right, #f1f5f7, #0e4f4b) 1 0 0 0;
+  }
+
+  &__price {
+    background: #ff8259;
+    width: 100%;
+    padding: 0.3rem 0;
+    text-align: center;
+    border-top: 3px solid;
+    border-image: linear-gradient(to left, #f1f5f7, #0e4f4b) 1 0 0 0;
+  }
+
+  &__image {
+    width: 70%;
+    height: 70%;
+    margin-top: 1rem;
+
+    @include respond(tab-land) {
+      width: 50%;
+      height: 50%;
+    }
+  }
+
+  &__actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    background: #121409;
+
+    &--button {
+      justify-self: center;
+      align-self: center;
+      padding: 0.5rem;
+    }
+  }
+}
+
+.description {
+  width: 100%;
+}

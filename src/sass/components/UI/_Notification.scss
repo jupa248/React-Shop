@@ -1,0 +1,27 @@
+.notification {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0 0.5rem;
+  align-items: center;
+  color: white;
+  gap: 2rem;
+  height: 3.8rem;
+}
+
+.notification h2,
+.notification p {
+  font-size: 1rem;
+  margin: 0;
+
+  @include respond(tab-land) {
+    font-size: 1.5rem;
+  }
+}
+
+.error {
+  background-color: #690000;
+}
+
+.success {
+  background-color: #007fff;
+}
