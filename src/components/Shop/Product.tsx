@@ -38,7 +38,9 @@ const Product: React.FC<ListItems> = (props) => {
 
   return (
     <article className="product">
-      <img src={image} alt={title} className="product__image" />
+      <div className="img-container">
+        <img src={image} alt={title} className="product__image" />
+      </div>
       <div className="description">
         <h3 className="product__title">{title}</h3>
         <p className="product__price">Price €{price}</p>

@@ -5,7 +5,6 @@
 
   &__title {
     text-align: center;
-    width: 80%;
     padding: 1.5rem 0.5rem;
     font-size: 1.5rem;
     margin-top: 0.3rem;
@@ -24,12 +23,12 @@
 
   &__image {
     width: 70%;
-    height: 70%;
+    //height: auto;
     margin-top: 1rem;
 
     @include respond(tab-land) {
       width: 50%;
-      height: 50%;
+      //height: 50%;
     }
   }
 
@@ -47,6 +46,15 @@
   }
 }
 
+.img-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
 .description {
   width: 100%;
+  display: flex;
+  flex-direction: column;
 }

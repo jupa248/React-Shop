@@ -9,9 +9,6 @@ import { getCartData, sendCartData } from "./store/cart-actions";
 import { getWishListData, sendWishListData } from "./store/wishList-actions";
 import { uiActions } from "./store/ui-slice";
 
-let isCartInitial = true;
-let isWishInitial = true;
-
 const App = () => {
   const dispatch = useAppDispatch();
   const showCart = useAppSelector((state) => state.ui.showCart);
@@ -27,11 +24,6 @@ const App = () => {
   }, [dispatch]);
 
   useEffect(() => {
-    if (isCartInitial) {
-      isCartInitial = false;
-      return;
-    }
-
     if (cart.changed) {
       dispatch(sendCartData(cart));
       const timer = setTimeout(() => {
@@ -45,11 +37,6 @@ const App = () => {
   }, [cart, dispatch]);
 
   useEffect(() => {
-    if (isWishInitial) {
-      isWishInitial = false;
-      return;
-    }
-
     if (wishList.changed) {
       dispatch(sendWishListData(wishList));
       const timer = setTimeout(() => {

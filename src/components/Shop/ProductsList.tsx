@@ -4,30 +4,27 @@ import useFetchPLP from "../Hooks/useFetchPLP";
 import { ListItems, TApiResponse } from "../../Models/types";
 import { PLP_URL } from "../../Models/config";
 import { useState } from "react";
-import { Filter } from "../../assets/IconsSvg";
+import { FilterIcon } from "../../assets/IconsSvg";
 import Spinner from "../UI/Spinner";
 
 const ProductsList: React.FC<ListItems | any> = (props) => {
   const notification = useAppSelector((state) => state.ui.notification);
   const [category, setCategory] = useState<string>("");
-  const [urlChanged, setUrlChanged] = useState<boolean>(false);
   const wishId = props.wishList.items.map((wish: ListItems) => wish.id);
 
   const handleCategory = (e: any) => {
-    e.preventDefault();
     setCategory(e.target.value);
-    setUrlChanged(true);
   };
   const products: TApiResponse = useFetchPLP(PLP_URL);
 
   const plpData =
-    !urlChanged || category === "All"
+    !category || category === "All"
       ? products.data
       : products.data?.filter(
           (product: ListItems) => product.category === category
         );
 
-  const mapping = plpData?.map((product: ListItems) => (
+  const mappedProducts = plpData?.map((product: ListItems) => (
     <Product
       key={product.id}
       id={product.id}
@@ -35,7 +32,7 @@ const ProductsList: React.FC<ListItems | any> = (props) => {
       title={product.title}
       price={product.price}
       category={product.category}
-      isWished={wishId.includes(product.id) && true}
+      isWished={wishId.includes(product.id)}
     />
   ));
 
@@ -48,14 +45,14 @@ const ProductsList: React.FC<ListItems | any> = (props) => {
           </header>
           <div className="categories__filter">
             <label htmlFor="category">
-              Filter <Filter />
+              Filter <FilterIcon />
             </label>
             <select name="category" id="category" onChange={handleCategory}>
               <option value="All">All categories</option>
               <option value="men's clothing">Men's Clothing</option>
               <option value="women's clothing">Women's clothing</option>
               <option value="electronics">Electronics</option>
-              <option value="jewelery">Jewelery</option>
+              <option value="jewelery">Jewelry</option>
             </select>
           </div>
         </div>
@@ -70,7 +67,7 @@ const ProductsList: React.FC<ListItems | any> = (props) => {
         </div>
       )}
       <div className="plp-container" aria-label="products list">
-        {!products.loading && mapping}
+        {!products.loading && mappedProducts}
       </div>
     </>
   );

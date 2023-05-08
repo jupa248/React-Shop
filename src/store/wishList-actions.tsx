@@ -4,6 +4,8 @@ import { uiActions } from "./ui-slice";
 import { WISH_URL } from "../Models/config";
 import axios from "axios";
 
+//const WISH_URL = `${process.env.REACT_APP_WISH_URL}`;
+
 export const getWishListData = () => {
   return async (dispatch: Function) => {
     const getData = async () => {
